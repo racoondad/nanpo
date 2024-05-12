@@ -18,3 +18,16 @@ func Execute() {
 		os.Exit(1)
 	}
 }
+
+func init() {
+}
+
+// AddCommand add sub command to root
+func AddCommand(cmd *cobra.Command) {
+	rootCmd.AddCommand(cmd)
+}
+
+// Commands returns all sub command
+func Commands() []*cobra.Command {
+	return rootCmd.Commands()
+}

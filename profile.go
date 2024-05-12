@@ -1,4 +1,0 @@
-package nanpo
-
-func initConfigurator() {
-}

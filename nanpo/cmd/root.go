@@ -7,10 +7,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var rootCmd = &cobra.Command{
-	Use:   "自动代码工具",
-	Short: "auto coding",
-}
+var rootCmd = &cobra.Command{}
 
 func Execute() {
 	if err := rootCmd.Execute(); err != nil {

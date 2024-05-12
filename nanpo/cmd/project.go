@@ -9,8 +9,8 @@ import (
 
 // NewProjectCmd .
 var NewProjectCmd = &cobra.Command{
-	Use:   "new-project [project_name]",
-	Short: "New a microservice project based on freedom",
+	Use:   "new [project_name]",
+	Short: "New project based on nanpo",
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		sysPath, err := filepath.Abs(args[0])
 		if err != nil {

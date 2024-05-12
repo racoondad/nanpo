@@ -12,7 +12,7 @@ const (
 
 // VersionCmd .
 var VersionCmd = &cobra.Command{
-	Use:   "版本号",
+	Use:   "v",
 	Short: "Output current version number",
 	RunE: func(cmd *cobra.Command, args []string) (err error) {
 		fmt.Println("nanpo " + versionNum)

@@ -1,0 +1,4 @@
+package nanpo
+
+func initConfigurator() {
+}

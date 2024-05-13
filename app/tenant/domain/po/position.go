@@ -5,23 +5,23 @@ import (
 	"gorm.io/gorm"
 )
 
-type Role struct {
+type Position struct {
 	changes map[string]interface{}
 	ormtypes.Model
-	Description string `gorm:"column:description;autoUpdateTime:milli"`
+	Description string `gorm:"column:description"`
 }
 
 // TableName .
-func (obj *Role) TableName() string {
-	return "base_role"
+func (obj *Position) TableName() string {
+	return "base_position"
 }
 
-func (obj *Role) AutoMigrate(db *gorm.DB) error {
+func (obj *Position) AutoMigrate(db *gorm.DB) error {
 	return db.AutoMigrate(obj)
 }
 
 // GetChanges .
-func (obj *Role) GetChanges() map[string]interface{} {
+func (obj *Position) GetChanges() map[string]interface{} {
 	if obj.changes == nil {
 		return nil
 	}
@@ -34,7 +34,7 @@ func (obj *Role) GetChanges() map[string]interface{} {
 }
 
 // Update .
-func (obj *Role) Update(key string, value interface{}) {
+func (obj *Position) Update(key string, value interface{}) {
 	if obj.changes == nil {
 		obj.changes = make(map[string]interface{})
 	}

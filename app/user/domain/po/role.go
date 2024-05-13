@@ -5,22 +5,23 @@ import (
 	"gorm.io/gorm"
 )
 
-type Admin struct {
+type Role struct {
 	changes map[string]interface{}
 	ormtypes.Model
+	Description string `gorm:"column:description"`
 }
 
 // TableName .
-func (obj *Admin) TableName() string {
-	return "base_Admin"
+func (obj *Role) TableName() string {
+	return "base_role"
 }
 
-func (obj *Admin) AutoMigrate(db *gorm.DB) error {
+func (obj *Role) AutoMigrate(db *gorm.DB) error {
 	return db.AutoMigrate(obj)
 }
 
 // GetChanges .
-func (obj *Admin) GetChanges() map[string]interface{} {
+func (obj *Role) GetChanges() map[string]interface{} {
 	if obj.changes == nil {
 		return nil
 	}
@@ -33,7 +34,7 @@ func (obj *Admin) GetChanges() map[string]interface{} {
 }
 
 // Update .
-func (obj *Admin) Update(key string, value interface{}) {
+func (obj *Role) Update(key string, value interface{}) {
 	if obj.changes == nil {
 		obj.changes = make(map[string]interface{})
 	}

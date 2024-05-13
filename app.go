@@ -16,10 +16,6 @@ var (
 	DB *gorm.DB
 	// 缓存
 	RD *redis.Client
-	// 数据列表
-	DBList map[string]*gorm.DB = make(map[string]*gorm.DB)
-	// 数据列表
-	RDList map[string]*redis.Client = make(map[string]*redis.Client)
 	// 日志
 	LOG *zap.Logger
 )

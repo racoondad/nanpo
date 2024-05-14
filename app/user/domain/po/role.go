@@ -8,6 +8,7 @@ import (
 type Role struct {
 	changes map[string]interface{}
 	ormtypes.Model
+	Name        string `gorm:"column:name;unique"`
 	Description string `gorm:"column:description"`
 }
 
@@ -39,4 +40,14 @@ func (obj *Role) Update(key string, value interface{}) {
 		obj.changes = make(map[string]interface{})
 	}
 	obj.changes[key] = value
+}
+
+func (obj *Role) SetCode(code string) {
+	obj.Code = code
+	obj.Update("code", code)
+}
+
+func (obj *Role) SetName(name string) {
+	obj.Name = name
+	obj.Update("Name", name)
 }

@@ -8,6 +8,7 @@ import (
 type Admin struct {
 	changes map[string]interface{}
 	ormtypes.Model
+	Name     string
 	Password string
 	RoleCode string
 	Role     Role
@@ -41,4 +42,14 @@ func (obj *Admin) Update(key string, value interface{}) {
 		obj.changes = make(map[string]interface{})
 	}
 	obj.changes[key] = value
+}
+
+func (obj *Admin) SetName(name string) {
+	obj.Name = name
+	obj.Update("name", name)
+}
+
+func (obj *Admin) SetRole(roleCode string) {
+	obj.RoleCode = roleCode
+	obj.Update("role_code", roleCode)
 }

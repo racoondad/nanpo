@@ -53,3 +53,8 @@ func (obj *Admin) SetRole(roleCode string) {
 	obj.RoleCode = roleCode
 	obj.Update("role_code", roleCode)
 }
+
+func (obj *Admin) SetPassword(newPassword string) {
+	obj.Password = newPassword
+	obj.Update("password", newPassword)
+}

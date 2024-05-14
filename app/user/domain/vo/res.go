@@ -1,5 +1,6 @@
 package vo
 
+// 用户信息
 type AdminInfoRes struct {
 	Id   uint64
 	Code string
@@ -10,6 +11,7 @@ type AdminInfoRes struct {
 	}
 }
 
+// 角色信息
 type RoleInfoRes struct {
 	Id   uint64
 	Code string
